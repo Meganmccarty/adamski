@@ -6,4 +6,13 @@
     {% block title %}<title>Dave Adamski - Publications</title>{% endblock %}
 </head>
 <h3>List of Publications</h3>
+    {% for publication in pub_list %}
+        <p>{{ publication.author }}</p>
+        <p>{{ publication.journal_title | safe }}</p>
+    {% endfor %}
+<h3>List of Works in Preparation</h3>
+    {% for publication in prep_list %}
+        <p>{{ publication.author }}</p>
+        <p>{{ publication.journal_title | safe }}</p>
+    {% endfor %}
 {% endblock %}
