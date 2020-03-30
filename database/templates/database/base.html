@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+    <head>
+
+    </head>
+    <body>
+        <header>
+            Dave's Awesome Website
+        </header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'publications' %}">Publications</a></li>
+                <li><a href="{% url 'presentations' %}">Presentations</a></li>
+            </ul>
+        </nav>
+        {% block content %}
+        {% endblock %}
+        <footer>
+            Website created by Megan McCarty
+        </footer>
+    </body>
+</html>
