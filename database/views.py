@@ -42,10 +42,16 @@ class PublicationListView(generic.ListView):
         context = super(PublicationListView, self).get_context_data(**kwargs)
         context['pub_list'] = Publication.objects.filter(status='Published').order_by('year', 'letter')
         context['accepted_list'] = Publication.objects.filter(status='Accepted').order_by('author')
-        context['submitted_list'] = submitted_list = Publication.objects.filter(status='Submitted').order_by('author')
+        context['submitted_list'] = Publication.objects.filter(status='Submitted').order_by('author')
         context['prep_list'] = Publication.objects.filter(status='In prep').order_by('author')
         return context
 
-def presentations(request):
-    return render(request, 'database/presentations.html')
+class PresentationListView(generic.ListView):
+    model = Presentation
+    template_name = 'database/presentations.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PresentationListView, self).get_context_data(**kwargs)
+        context['pres_list'] = Presentation.objects.order_by('year')
+        return context
 

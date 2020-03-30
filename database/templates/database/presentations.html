@@ -6,4 +6,9 @@
     {% block title %}<title>Dave Adamski - Presentations</title>{% endblock %}
 </head>
 <h3>List of Presentations</h3>
+    {% for presentation in pres_list %}
+        <p>{{ presentation.day }} {{presentation.month }} {{ presentation.year }}</p>
+        <p>{{ presentation.presenter }}</p>
+        <p>{{ presentation.title }}</p>
+    {% endfor %}
 {% endblock %}
