@@ -67,3 +67,21 @@ class Travel(models.Model):
     def __str__(self):
         return f'{self.year}: {self.travel_details}'
 
+class Grant(models.Model):
+    year = models.IntegerField(null=True, blank=True, validators=[MinValueValidator(1900), \
+                                MaxValueValidator(2100)], help_text='Enter the '\
+                                'year of the fellowship or grant.')
+    amount = models.IntegerField(null=True, blank=True, help_text='Enter the amount ' \
+                                'of the fellowship or grant.')
+    grant_details = models.TextField(max_length=10000, null=True, blank=True, verbose_name= \
+                                'Fellowship or grant details', help_text='Enter the details ' \
+                                'of the fellowship or grant. If there are scientific ' \
+                                'names, put the scientific name between "&lt;i&gt;" and ' \
+                                '"&lt;/i&gt;" tags. This will render the name in italics on ' \
+                                'the website.')
+    class Meta:
+        ordering = ['year', 'amount', 'grant_details']
+    
+    def __str__(self):
+        return f'{self.year}: {self.grant_details}. {self.amount}'
+

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from .models import Publication, Presentation, Travel
+from .models import Publication, Presentation, Travel, Grant
 
 def home(request):
     return render(request, 'database/home.html')
@@ -34,4 +34,14 @@ class TravelListView(generic.ListView):
         context = super(TravelListView, self).get_context_data(**kwargs)
         context['travel_list'] = Travel.objects.order_by('-year', 'travel_details')
         return context
+
+class GrantListView(generic.ListView):
+    model = Grant
+    template_name = 'database/grants.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(GrantListView, self).get_context_data(**kwargs)
+        context['grant_list'] = Grant.objects.order_by('-year', '-amount', 'grant_details')
+        return context
+
 

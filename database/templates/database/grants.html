@@ -1,0 +1,16 @@
+{% extends 'database/base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    {% block title %}<title>Dave Adamski - Fellowships and Grants</title>{% endblock %}
+</head>
+<h3>Fellowships and Grants</h3>
+    <ul class="list">
+        {% for grant in grant_list %}
+            <li>
+                {{ grant.year }}. {{ grant.grant_details | safe }}: ${{ grant.amount }}.
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
