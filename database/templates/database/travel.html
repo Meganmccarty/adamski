@@ -1,0 +1,16 @@
+{% extends 'database/base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    {% block title %}<title>Dave Adamski - Travel</title>{% endblock %}
+</head>
+<h3>Travel</h3>
+    <ul class="list">
+        {% for travel in travel_list %}
+            <li>
+                {{ travel.year }}: {{ travel.travel_details | safe }}.
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
