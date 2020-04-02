@@ -42,6 +42,16 @@ nav ul {
     font-weight: bold;
 }
 
+/*---------- Footer ----------*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*---------- Lists on Pub. and Pres. Pages ----------*/
+
 .list li {
     padding: 5px;
 }
