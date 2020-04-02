@@ -1,0 +1,47 @@
+/*---------- Basic CSS Stuff ----------*/
+
+body {
+    background-color: rgb(126,103,66);
+    margin: 20px;
+}
+
+.content {
+    background-color: rgb(246,245,236);
+    padding: 15px;
+}
+
+/*---------- Header ----------*/
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/*---------- Navigation ----------*/
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.navigation ul li {
+    display: inline;
+    padding: 5px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.navigation ul li a:hover {
+    font-weight: bold;
+}
+
+.list li {
+    padding: 5px;
+}

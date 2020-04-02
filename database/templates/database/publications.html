@@ -5,9 +5,8 @@
 <head>
     {% block title %}<title>Dave Adamski - Publications</title>{% endblock %}
 </head>
-<h3>List of Publications</h3>
-    <p>Total publications: {{ pub_count }}</p>
-    <ol>
+<h3>Publications: {{ pub_count }}</h3>
+    <ol class="list">
         {% for publication in pub_list %}
             <li>{{ publication.author }}. {{ publication.year_and_letter }}. {{ publication.reference | safe }}.</li>
         {% endfor %}
