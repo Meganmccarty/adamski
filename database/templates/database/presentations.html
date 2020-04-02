@@ -6,9 +6,72 @@
     {% block title %}<title>Dave Adamski - Presentations</title>{% endblock %}
 </head>
 <h3>List of Presentations</h3>
-    {% for presentation in pres_list %}
-        <p>{{ presentation.day }} {{presentation.month }} {{ presentation.year }}</p>
-        <p>{{ presentation.presenter }}</p>
-        <p>{{ presentation.title }}</p>
-    {% endfor %}
+    <p>Total presentations: {{ pres_count }}</p>
+    <ol>
+        {% for presentation in pres_list %}
+            <li>
+                {% if presentation.month == '01' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    January {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% elif presentation.month == '02' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    February {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% elif presentation.month == '03' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    March {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% elif presentation.month == '04' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    April {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% elif presentation.month == '05' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    May {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% elif presentation.month == '06' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    June {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% elif presentation.month == '07' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    July {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% elif presentation.month == '08' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    August {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% elif presentation.month == '09' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    September {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% elif presentation.month == '10' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    October {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% elif presentation.month == '11' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    November {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% elif presentation.month == '12' %}
+                    {{ presentation.meeting }}, {{ presentation.location }}: 
+                    {{ presentation.symposium}}. "{{ presentation.title }}." 
+                    December {{ presentation.day }}, {{ presentation.year }}. 
+                    Presenter: {{ presentation.presenter }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
 {% endblock %}

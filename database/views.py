@@ -44,6 +44,10 @@ class PublicationListView(generic.ListView):
         context['accepted_list'] = Publication.objects.filter(status='Accepted').order_by('author')
         context['submitted_list'] = Publication.objects.filter(status='Submitted').order_by('author')
         context['prep_list'] = Publication.objects.filter(status='In prep').order_by('author')
+        context['pub_count'] = Publication.objects.filter(status='Published').count()
+        context['accepted_count'] = Publication.objects.filter(status='Accepted').count()
+        context['submitted_count'] = Publication.objects.filter(status='Submitted').count()
+        context['prep_count'] = Publication.objects.filter(status='In prep').count()
         return context
 
 class PresentationListView(generic.ListView):
@@ -52,6 +56,7 @@ class PresentationListView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PresentationListView, self).get_context_data(**kwargs)
-        context['pres_list'] = Presentation.objects.order_by('year')
+        context['pres_list'] = Presentation.objects.order_by('year', 'month', 'day')
+        context['pres_count'] = Presentation.objects.all().count()
         return context
 

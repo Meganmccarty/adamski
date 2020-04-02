@@ -65,18 +65,18 @@ class Publication(models.Model):
 
 class Presentation(models.Model):
     MONTH = (
-        ('January', 'January'),
-        ('February', 'February'),
-        ('March', 'March'),
-        ('April', 'April'),
-        ('May', 'May'),
-        ('June', 'June'),
-        ('July', 'July'),
-        ('August', 'August'),
-        ('September', 'September'),
-        ('October', 'October'),
-        ('November', 'November'),
-        ('December', 'December'),
+        ('01', 'January'),
+        ('02', 'February'),
+        ('03', 'March'),
+        ('04', 'April'),
+        ('05', 'May'),
+        ('06', 'June'),
+        ('07', 'July'),
+        ('08', 'August'),
+        ('09', 'September'),
+        ('10', 'October'),
+        ('11', 'November'),
+        ('12', 'December'),
     )
     day = models.CharField(max_length=5, null=True, blank=True, verbose_name='day(s)', \
                                 help_text='Enter the day(s) the presentation was presented.')
