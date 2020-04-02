@@ -85,3 +85,14 @@ class Grant(models.Model):
     def __str__(self):
         return f'{self.year}: {self.grant_details}. {self.amount}'
 
+class Society(models.Model):
+    society = models.TextField(max_length=500, null=True, blank=True, help_text='Enter the ' \
+                                'name of the society, as well as any postions held.')
+    
+    class Meta:
+        ordering = ['society']
+        verbose_name_plural = "Societies"
+    
+    def __str__(self):
+        return self.society
+

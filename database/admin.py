@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Publication, Presentation, Travel, Grant
+from .models import Publication, Presentation, Travel, Grant, Society
 
 @admin.register(Publication)
 class PublicationAdmin(admin.ModelAdmin):
@@ -24,3 +24,7 @@ class GrantAdmin(admin.ModelAdmin):
     list_display = ('year', 'amount', 'grant_details')
     search_fields = ('year', 'amount', 'grant_details')
     fields = ('year', 'amount', 'grant_details')
+
+@admin.register(Society)
+class SocietyAdmin(admin.ModelAdmin):
+    pass
