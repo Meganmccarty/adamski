@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Publication, Presentation
+from .models import Publication, Presentation, Travel
 
 @admin.register(Publication)
 class PublicationAdmin(admin.ModelAdmin):
@@ -12,3 +12,9 @@ class PresentationAdmin(admin.ModelAdmin):
     list_display = ('year', 'title', 'location', 'presenter')
     search_fields = ('year', 'title', 'location', 'presenter')
     fields = ('year', 'title', 'location', 'presenter')
+
+@admin.register(Travel)
+class TravelAdmin(admin.ModelAdmin):
+    list_display = ('year', 'travel_details')
+    search_fields = ('year', 'travel_details')
+    fields = ('year', 'travel_details')
