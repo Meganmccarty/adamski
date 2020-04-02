@@ -60,7 +60,7 @@ class PresentationListView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PresentationListView, self).get_context_data(**kwargs)
-        context['pres_list'] = Presentation.objects.order_by('year', 'month', 'day')
+        context['pres_list'] = Presentation.objects.order_by('-year', 'title')
         context['pres_count'] = Presentation.objects.all().count()
         return context
 

@@ -70,6 +70,7 @@ class Publication(models.Model):
         return f'{self.author}. {self.year_and_letter}'
 
 class Presentation(models.Model):
+    """
     MONTH = (
         ('01', 'January'),
         ('02', 'February'),
@@ -88,22 +89,30 @@ class Presentation(models.Model):
                                 help_text='Enter the day(s) the presentation was presented.')
     month = models.CharField(max_length=15, choices=MONTH, null=True, blank=True, \
                                 help_text='Select the month the presentation was presented.')
+    """
     year = models.IntegerField(null=True, blank=True, help_text='Enter the year the ' \
                                 'presentation was presented.')
-    presenter = models.CharField(max_length=50, null=True, blank=True, help_text='Enter ' \
-                                'the name of the presenter.')
-    title = models.CharField(max_length=500, null=True, blank=True, help_text='Enter the ' \
+    title = models.TextField(max_length=1000, null=True, blank=True, help_text='Enter the ' \
                                 'title of the presenation. If the title has scientific ' \
                                 'names, put the scientific name between "&lt;i&gt;" and ' \
                                 '"&lt;/i&gt;" tags. This will render the name in italics on ' \
                                 'the website.')
+    """
     symposium = models.CharField(max_length=100, null=True, blank=True, help_text='Enter the ' \
                                 'symposium for this presentation, if it was presented in one.')
     meeting = models.CharField(max_length=100, null=True, blank=True, help_text='Enter the ' \
                                 'meeting at which the presentation was presented.')
-    location = models.CharField(max_length=100, null=True, blank=True, help_text='Enter the ' \
-                                'location where the presentation was presented.')
-
+    """
+    location = models.TextField(max_length=10000, null=True, blank=True, help_text='Enter the ' \
+                                'location where the presentation was presented, as well as ' \
+                                'any details regarding the meeting.')
+    presenter = models.CharField(max_length=50, null=True, blank=True, help_text='Enter ' \
+                                'the name of the presenter if it was someone other than ' \
+                                'yourself.')
+    
+    class Meta:
+        ordering = ['year', 'title']
+    """
     @property
     def get_day(self):
         if self.day:
@@ -122,7 +131,8 @@ class Presentation(models.Model):
             return self.year
         else:
             return ""
+    """
 
     def __str__(self):
-        return f'{self.get_day} {self.get_month} {self.get_year}: {self.title}'
+        return f'{self.year}: {self.title}'
 

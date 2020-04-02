@@ -9,8 +9,6 @@ class PublicationAdmin(admin.ModelAdmin):
 
 @admin.register(Presentation)
 class PresentationAdmin(admin.ModelAdmin):
-    list_display = ('day', 'month', 'year', 'presenter', 'title', 'symposium', 'meeting', \
-                    'location')
-    search_fields = ('year', 'presenter', 'title', 'symposium', 'meeting', 'location')
-    fields = ('day', 'month', 'year', 'presenter', 'title', 'symposium', 'meeting', \
-                    'location')
+    list_display = ('year', 'title', 'location', 'presenter')
+    search_fields = ('year', 'title', 'location', 'presenter')
+    fields = ('year', 'title', 'location', 'presenter')
