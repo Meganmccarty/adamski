@@ -7,14 +7,9 @@
 </head>
 <h3>List of Publications</h3>
     <p>Total publications: {{ pub_count }}</p>
-    {% for publication in pub_list %}
-        <p>{{ publication.author }}</p>
-        <p>{{ publication.journal_title | safe }}</p>
-    {% endfor %}
-<h3>List of Works in Preparation</h3>
-<p>Total works in prep: {{ prep_count }}</p>
-    {% for publication in prep_list %}
-        <p>{{ publication.author }}</p>
-        <p>{{ publication.journal_title | safe }}</p>
-    {% endfor %}
+    <ol>
+        {% for publication in pub_list %}
+            <li>{{ publication.author }}. {{ publication.year_and_letter }}. {{ publication.reference | safe }}.</li>
+        {% endfor %}
+    </ol>
 {% endblock %}

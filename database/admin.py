@@ -3,16 +3,9 @@ from .models import Publication, Presentation
 
 @admin.register(Publication)
 class PublicationAdmin(admin.ModelAdmin):
-    list_display = ('pub_num', 'status', 'author', 'get_year_and_letter', 'journal_title', 
-                    'journal', 'volume_num', 'issue_num', 'pages', 'editor', 'chapter_title', \
-                    'book_title', 'edition', 'volume', 'publisher', 'publisher_country', \
-                    'book_pages')
-    search_fields = ('author', 'get_year_and_letter', 'journal_title', 'journal', \
-                    'chapter_title', 'book_title')
-    fields = ('pub_num', 'status', 'author', 'year', 'letter', 'journal_title', 'journal', \
-                    'volume_num', 'issue_num', 'pages', 'editor', 'chapter_title', \
-                    'book_title', 'edition', 'volume', 'publisher', 'publisher_country', \
-                    'book_pages', 'pdf')
+    list_display = ('author', 'year_and_letter', 'reference')
+    search_fields = ('author', 'year_and_letter', 'reference')
+    fields = ('author', 'year', 'letter', 'reference', 'pdf')
 
 @admin.register(Presentation)
 class PresentationAdmin(admin.ModelAdmin):

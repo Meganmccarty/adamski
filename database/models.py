@@ -1,6 +1,7 @@
 from django.db import models
 
 class Publication(models.Model):
+    """
     STATUS = (
         ('Published', 'Published'),
         ('Accepted', 'Accepted'),
@@ -11,13 +12,17 @@ class Publication(models.Model):
                                 help_text='Select the status of the publication.')
     pub_num = models.IntegerField(null=True, blank=True, verbose_name = 'Publication Number',
                                 help_text='Enter the number of this publication, if it is published.')
+    """
     author = models.CharField(max_length=10000, null=True, blank=True, verbose_name='Author(s)',
                                 help_text='Enter the author(s) who wrote this publication.')
     year = models.IntegerField(null=True, blank=True, help_text='Enter the year the publication ' \
                                 'was published.')
     letter = models.CharField(max_length=2, null=True, blank=True, help_text='Enter a letter ' \
-                                'to follow the publication year, if this publication shares the ' \
-                                'exact same authors and author order as another publication.')
+                                'to follow the publication year, if there was more than 1 ' \
+                                'publication in a given year.')
+    reference = models.TextField(max_length=10000, default='', null=True, blank=True, \
+                                help_text='Enter the rest of the publication (title, journal, pages, etc.')
+    """
     journal_title = models.CharField(max_length=1000, null=True, blank=True, help_text='Enter ' \
                                 'the title of the publication. If the title has scientific names, ' \
                                 'put the scientific name between "&lt;i&gt;" and "&lt;/i&gt;" tags. This will ' \
@@ -48,20 +53,21 @@ class Publication(models.Model):
                                 'the country of the publisher.')
     book_pages = models.CharField(max_length=10, null=True, blank=True, help_text='Enter the ' \
                                 'book\'s pages.')
-    pdf = models.FileField(upload_to='publication-pdfs', null=True, blank=True)
+    """
+    pdf = models.FileField(upload_to='publication_pdfs', null=True, blank=True)
 
     class Meta:
-        ordering = ['pub_num', 'author', 'year']
+        ordering = ['year', 'letter', 'author']
     
     @property
-    def get_year_and_letter(self):
+    def year_and_letter(self):
         if self.letter:
             return f'{self.year}{self.letter}'
         else:
             return self.year
 
     def __str__(self):
-        return f'{self.pub_num}: {self.author}. {self.get_year_and_letter}. {self.journal_title}'
+        return f'{self.author}. {self.year_and_letter}'
 
 class Presentation(models.Model):
     MONTH = (
