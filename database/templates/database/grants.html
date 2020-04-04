@@ -5,12 +5,21 @@
 <head>
     {% block title %}<title>Dave Adamski - Fellowships and Grants</title>{% endblock %}
 </head>
-<h3>Fellowships and Grants</h3>
-    <ul class="list">
+<div id="all-items">
+    <div class="search-box">
+        <h3>Fellowships and Grants</h3>
+        <input class="search" placeholder="Search" />
+    </div>
+    <ul class="list list-items">
         {% for grant in grant_list %}
             <li>
-                {{ grant.year }}. {{ grant.grant_details | safe }}: ${{ grant.amount }}.
+                <span class="item">{{ grant.year }}. {{ grant.grant_details | safe }}: ${{ grant.amount }}.</span>
             </li>
-        {% endfor %}
+    {% endfor %}
+    </ul>
+</div>
+
+    <ul class="list-items">
+        
     </ul>
 {% endblock %}

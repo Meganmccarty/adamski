@@ -5,15 +5,20 @@
 <head>
     {% block title %}<title>Dave Adamski - Travel</title>{% endblock %}
 </head>
-<div class="img-right">
-    <img class="img-right" src="{% static 'images/atlas-moth.jpg' %}">
-</div>
-<h3>Travel</h3>
-    <ul class="list">
+<div id="all-items">
+    <div class="search-box">
+        <h3>Travel</h3>
+        <input class="search" placeholder="Search" />
+    </div>
+    <div class="img-right">
+        <img class="img-right" src="{% static 'images/atlas-moth.jpg' %}">
+    </div>
+    <ul class="list list-items">
         {% for travel in travel_list %}
             <li>
-                {{ travel.year }}: {{ travel.travel_details | safe }}.
+                <span class="item">{{ travel.year }}: {{ travel.travel_details | safe }}.</span>
             </li>
         {% endfor %}
     </ul>
+</div>
 {% endblock %}

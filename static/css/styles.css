@@ -48,16 +48,14 @@ h5 {
 
 /*---------- Navigation ----------*/
 
-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
+.bg-brown {
+    background-color: rgb(188,169,146);
+    border-radius: 5px;
 }
 
 .navigation ul li {
-    display: inline;
     font-size: 20px;
-    padding: 10px;
+    padding: 13px;
 }
 
 .navigation ul li a {
@@ -79,7 +77,7 @@ footer {
 
 /*---------- Lists on Pub. and Pres. Pages ----------*/
 
-.list li {
+.list-iems li {
     padding: 5px;
 }
 
@@ -91,6 +89,18 @@ footer {
     width: 100%;
     max-width: 400px;
     border-radius: 5px;
+}
+
+.search-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.search {
+    border-radius: 5px;
+    border: 1px solid rgb(216,216,216);
 }
 
 @media all and (max-width: 850px) {

@@ -5,10 +5,17 @@
 <head>
     {% block title %}<title>Dave Adamski - Publications</title>{% endblock %}
 </head>
-<h3>Publications: {{ pub_count }}</h3>
-    <ol class="list">
+<div id="all-items">
+    <div class="search-box">
+        <h3>Publications: {{ pub_count }}</h3>
+        <input class="search" placeholder="Search" />
+    </div>
+    <ol class="list list-items">
         {% for publication in pub_list %}
-            <li>{{ publication.author }}. {{ publication.year_and_letter }}. {{ publication.reference | safe }}.</li>
+            <li>
+                <span class="item">{{ publication.author }}. {{ publication.year_and_letter }}. {{ publication.reference | safe }}.</span>
+            </li>
         {% endfor %}
     </ol>
+</div>
 {% endblock %}
