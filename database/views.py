@@ -4,7 +4,8 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from .models import Publication, Presentation, Travel, Grant, Society
 
 def home(request):
-    return render(request, 'database/home.html')
+    society_list = Society.objects.order_by('society')
+    return render(request, 'database/home.html', {'society_list' : society_list})
 
 class PublicationListView(generic.ListView):
     model = Publication
