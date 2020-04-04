@@ -43,7 +43,7 @@ h5 {
 
 #card {
     width: 100%;
-    max-width: 275px;
+    max-width: 225px;
 }
 
 /*---------- Navigation ----------*/
@@ -113,12 +113,22 @@ footer {
     }
 }
 
-@media all and (max-width: 670px) {
+@media all and (min-width: 601px) {
     h3 {
         font-size: 20px;
     }
 
     h5 {
         font-size: 15px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    h3 {
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: 13px;
     }
 }
