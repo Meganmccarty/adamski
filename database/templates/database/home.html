@@ -5,6 +5,23 @@
 <head>
     {% block title %}<title>Dave Adamski - Home</title>{% endblock %}
 </head>
-<h2>Welcome to Dave's Awesome Website!</h2>
+<div class="img-right">
+    <img class="img-right" src="{% static 'images/blacklight.jpg' %}">
+</div>
+<h4>About</h4>
 <p>This is where your personal statement will go, as well as anything else you'd like (such as pictures).</p>
+<h4>Education</h4>
+<ul class="list">
+    <li>1987: Ph.D., Mississippi State University (MSU): Entomology, Systematics.</li>
+    <li>1981: M.S., University of Massachusetts (UMASS): Entomology, Systematics.</li>
+    <li>1979: B.S., University of Massachusetts: Entomology.</li>
+    <li>1977: M.S., American International College: Special Education.</li>
+    <li>1972: B.S., American International College: Business Administration.</li>
+</ul>
+<h4>Socities</h4>
+<ul class="list">
+    {% for society in society_list %}
+        <li>{{ society.society | safe }}.</li>
+    {% endfor %}
+</ul>
 {% endblock %}
