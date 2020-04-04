@@ -7,8 +7,23 @@
     </head>
     <body>
         <div class="content">
-            <header>
-                <h1>Dave's Awesome Website</h1>
+            <header class="header">
+                <div class="subheader">
+                    <div class="subheader-item">
+                        <img id="card" src="{% static 'images/card-img.png' %}">
+                    </div>
+                    <div class="subheader-item">
+                        <h3><b>Smithsonian Institution</b></h3>
+                        <h5>National Museum of Natural History</h5>
+                        <h5>Department of Entomology</h5>
+                        <h5>P.O. Box 37102, MRC - 168, E526</h5>
+                        <h5>Washington, D.C. 20013-7012</h5>
+                        <h3><b>David Adamski</b></h3>
+                        <h5>Research Associate</h5>
+                        <h5>Tel: 202.812.0527</h5>
+                        <h5>Email: adamskid@si.edu</h5>
+                    </div>
+                </div>
             </header>
         </div>
         <br>
@@ -20,7 +35,6 @@
                     <li><a href="{% url 'presentations' %}">Presentations</a></li>
                     <li><a href="{% url 'travel' %}">Travel</a></li>
                     <li><a href="{% url 'grants' %}">Fellowships and Grants</a></li>
-                    <li><a href="{% url 'societies' %}">Societies</a></li>
                 </ul>
             </nav>
             <hr>
@@ -30,7 +44,7 @@
         <br>
         <div class="content">
             <footer>
-                <p>Content and images ©2020 David Adamski. All rights reserved.</p>
+                <p>Content and images © 2020 David Adamski. All rights reserved.</p>
                 <p class="small text-muted">Website created by Megan McCarty</p>
             </footer>
         </div>
