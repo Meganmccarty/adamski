@@ -83,6 +83,9 @@ footer {
 
 .img-right {
     float: right;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .img-right img {
