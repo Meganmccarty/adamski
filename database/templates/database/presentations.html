@@ -14,9 +14,9 @@
         {% for presentation in pres_list %}
             <li>
                 {% if presentation.presenter %}
-                    <span class="item">{{ presentation.year}}. "{{ presentation.title | safe }}." {{ presentation.location | safe }}. {{ presentation.presenter }}, presenter.</span>
+                    <span class="item">{{ presentation.year}}. {{ presentation.title | safe }} {{ presentation.location | safe }} {{ presentation.presenter }}, presenter.</span>
                 {% else %}
-                    <span class="item">{{ presentation.year}}. "{{ presentation.title | safe }}." {{ presentation.location | safe }}.</span>
+                    <span class="item">{{ presentation.year}}. {{ presentation.title | safe }} {{ presentation.location | safe }}</span>
                 {% endif %}
             </li>
         {% endfor %}

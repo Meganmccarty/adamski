@@ -13,7 +13,7 @@
     <ol class="list list-items">
         {% for publication in pub_list %}
             <li>
-                <span class="item">{{ publication.author }}. {{ publication.year_and_letter }}. {{ publication.reference | safe }}.</span>
+                <span class="item">{{ publication.author }} {{ publication.year_and_letter }}. {{ publication.reference | safe }}</span>
             </li>
         {% endfor %}
     </ol>
