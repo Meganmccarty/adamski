@@ -3,28 +3,25 @@
 
 {% block content %}
 <head>
-    {% block title %}<title>Dave Adamski - Publications</title>{% endblock %}
+    {% block title %}<title>David Adamski - Publications</title>{% endblock %}
 </head>
-<div id="all-items">
-    <div class="search-box">
-        <h3>Publications: {{ pub_count }}</h3>
-        <input class="search" placeholder=" Search" />
-    </div>
-    <div class="img-right">
-        <img class="img-right" src="{% static 'images/adamski-usnm.jpg' %}">
-    </div>
-    <ol class="list list-items">
-        {% for publication in pub_list %}
-            <li>
-                <span class="item">{{ publication.author }}
-                {{ publication.year_and_letter }}.
-                {{ publication.reference | safe }}
-                {% if publication.pdf %}
-                    <a target="_blank" href="{{ publication.pdf.url }}">Download PDF</a>
-                {% endif %}
-                </span>
-            </li>
-        {% endfor %}
-    </ol>
+<div class="search-box">
+    <h4>Publications: {{ pub_count }}</h4>
+    <input class="search" placeholder=" Search" />
 </div>
+<div class="img-right">
+    <img class="img-right" src="{% static 'images/adamski-usnm.jpg' %}">
+</div>
+<ol class="list list-items">
+    {% for publication in pub_list %}
+        <li>
+            <span>{{ publication.author }} {{ publication.year_and_letter }}.
+            {{ publication.reference | safe }}
+            {% if publication.pdf %}
+                <a target="_blank" href="{{ publication.pdf.url }}">Download PDF</a>
+            {% endif %}
+        </span>
+        </li>
+    {% endfor %}
+</ol>
 {% endblock %}

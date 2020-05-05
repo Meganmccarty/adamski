@@ -17,19 +17,41 @@ body {
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .subheader {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
+/* Business Card */
+.subheader-item {
+    margin-left: 5px;
+    margin-right: 5px;
+    max-height: 300px;
+    text-align: right;
+}
+
+#card {
+    max-width: 225px;
+    width: 100%;
+}
+
+h3, h5 {
+    margin: 5px;
+}
+
+/* Images on either side of Business Card */
 .subheader-img {
     max-width: 250px;
+}
+
+.subheader-img img {
+    width: 100%;
 }
 
 #left-header-img {
@@ -40,26 +62,6 @@ body {
 #right-header-img {
     margin-left: 50px;
     margin-right: 0px;
-}
-
-.subheader-img img {
-    width: 100%;
-}
-
-.subheader-item {
-    margin-left: 5px;
-    margin-right: 5px;
-    max-height: 300px;
-    text-align: right;
-}
-
-h5 {
-    margin: 5px;
-}
-
-#card {
-    max-width: 225px;
-    width: 100%;
 }
 
 /*---------- Navigation ----------*/
@@ -89,9 +91,10 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-/*---------- Images on Home, Travel, and Grants Pages ----------*/
+/*---------- Images on Pages ----------*/
 
 .img-right {
     float: right;
@@ -106,7 +109,7 @@ footer {
     width: 100%;
 }
 
-/*---------- Lists on Pub. and Pres. Pages ----------*/
+/*---------- Lists on all Pages with Search ----------*/
 
 .list-items li {
     padding: 5px;
@@ -129,6 +132,7 @@ footer {
 /*---------- Media Queries ----------*/
 
 @media all and (max-width: 850px) {
+    /* Images on Pages */
     .img-right {
         float: none;
         display: flex;
@@ -137,6 +141,7 @@ footer {
         justify-content: center;
     }
 
+    /* Hide Images on either side of Business Card in Header */
     .subheader-img {
         display: none;
     }
@@ -147,6 +152,7 @@ footer {
 }
 
 @media all and (min-width: 601px) {
+    /* Text size in Business Card in Header */
     h3 {
         font-size: 20px;
     }
@@ -157,6 +163,7 @@ footer {
 }
 
 @media all and (max-width: 600px) {
+    /* Text size in Business Card in Header */
     h3 {
         font-size: 18px;
     }

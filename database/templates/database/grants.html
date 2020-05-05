@@ -3,27 +3,23 @@
 
 {% block content %}
 <head>
-    {% block title %}<title>Dave Adamski - Fellowships and Grants</title>{% endblock %}
+    {% block title %}<title>David Adamski - Fellowships and Grants</title>{% endblock %}
 </head>
-<div id="all-items">
-    <div class="search-box">
-        <h3>Fellowships and Grants</h3>
-        <input class="search" placeholder=" Search" />
-    </div>
-    <div class="img-right">
-        <img class="img-right" src="{% static 'images/mantis.jpg' %}">
-        <p>Photo © Megan McCarty</p>
-    </div>
-    <ul class="list list-items">
-        {% for grant in grant_list %}
-            <li>
-                <span class="item">{{ grant.year }}. {{ grant.grant_details | safe }}: ${{ grant.amount }}.</span>
-            </li>
-    {% endfor %}
-    </ul>
+<div class="search-box">
+    <h4>Fellowships and Grants</h4>
+    <input class="search" placeholder=" Search" />
 </div>
-
-    <ul class="list-items">
-        
-    </ul>
+<div class="img-right">
+    <img class="img-right" src="{% static 'images/mantis.jpg' %}">
+    <p>Photo © Megan McCarty</p>
+</div>
+<ul class="list list-items">
+    {% for grant in grant_list %}
+        <li>
+            <span>
+                {{ grant.year }}. {{ grant.grant_details | safe }}: ${{ grant.amount }}.
+            </span>
+        </li>
+    {% endfor %}
+</ul>
 {% endblock %}

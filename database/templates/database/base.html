@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
+        <!-- Element containing the Header -->
         <div class="content">
             <header class="header">
                 <div class="subheader">
@@ -35,10 +36,13 @@
             </header>
         </div>
         <br>
+        <!-- Element containing the Navbar and Page content -->
         <div class="content">
             <nav class="navbar navbar-expand-md navbar-light bg-brown navigation">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler navbar-toggler-right" type="button"
+                    data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -47,16 +51,16 @@
                             <a href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{% url 'publications' %}">Publications</a></li>
+                            <a href="{% url 'publications' %}">Publications</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{% url 'presentations' %}">Presentations</a></li>
+                            <a href="{% url 'presentations' %}">Presentations</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{% url 'travel' %}">Travel</a></li>
+                            <a href="{% url 'travel' %}">Travel</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{% url 'grants' %}">Fellowships and Grants</a></li>
+                            <a href="{% url 'grants' %}">Fellowships and Grants</a>
                         </li>
                     </ul>
                 </div>
@@ -66,6 +70,7 @@
             {% endblock %}
         </div>
         <br>
+        <!-- Element containing the Footer -->
         <div class="content">
             <footer>
                 <p>Content and images © 2020 David Adamski. All rights reserved.</p>

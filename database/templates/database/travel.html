@@ -3,22 +3,22 @@
 
 {% block content %}
 <head>
-    {% block title %}<title>Dave Adamski - Travel</title>{% endblock %}
+    {% block title %}<title>David Adamski - Travel</title>{% endblock %}
 </head>
-<div id="all-items">
-    <div class="search-box">
-        <h3>Travel</h3>
-        <input class="search" placeholder=" Search" />
-    </div>
-    <div class="img-right">
-        <img class="img-right" src="{% static 'images/atlas-moth.jpg' %}">
-    </div>
-    <ul class="list list-items">
-        {% for travel in travel_list %}
-            <li>
-                <span class="item">{{ travel.year }}: {{ travel.travel_details | safe }}</span>
-            </li>
-        {% endfor %}
-    </ul>
+<div class="search-box">
+    <h4>Travel</h4>
+    <input class="search" placeholder=" Search" />
 </div>
+<div class="img-right">
+    <img class="img-right" src="{% static 'images/atlas-moth.jpg' %}">
+</div>
+<ul class="list list-items">
+    {% for travel in travel_list %}
+        <li>
+            <span>
+                {{ travel.year }}: {{ travel.travel_details | safe }}
+            </span>
+        </li>
+    {% endfor %}
+</ul>
 {% endblock %}
