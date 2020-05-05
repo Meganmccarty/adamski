@@ -10,6 +10,9 @@
         <h3>Presentations: {{ pres_count }}</h3>
         <input class="search" placeholder=" Search" />
     </div>
+    <div class="img-right">
+        <img class="img-right" src="{% static 'images/net-sunset.JPG' %}">
+    </div>
     <ul class="list list-items">
         {% for presentation in pres_list %}
             <li>

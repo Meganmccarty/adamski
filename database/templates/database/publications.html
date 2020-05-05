@@ -10,6 +10,9 @@
         <h3>Publications: {{ pub_count }}</h3>
         <input class="search" placeholder=" Search" />
     </div>
+    <div class="img-right">
+        <img class="img-right" src="{% static 'images/adamski-usnm.jpg' %}">
+    </div>
     <ol class="list list-items">
         {% for publication in pub_list %}
             <li>

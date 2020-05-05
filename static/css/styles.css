@@ -18,12 +18,32 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 .subheader {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subheader-img {
+    max-width: 250px;
+}
+
+#left-header-img {
+    margin-left: 0px;
+    margin-right: 50px;
+}
+
+#right-header-img {
+    margin-left: 50px;
+    margin-right: 0px;
+}
+
+.subheader-img img {
+    width: 100%;
 }
 
 .subheader-item {
@@ -115,6 +135,14 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .subheader-img {
+        display: none;
+    }
+
+    .subheader-img img {
+        display: none;
     }
 }
 
