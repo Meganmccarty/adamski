@@ -18,7 +18,7 @@ class Publication(models.Model):
 
     class Meta:
         ordering = ['year', 'letter', 'author']
-    
+
     @property
     def year_and_letter(self):
         if self.letter:
@@ -27,7 +27,7 @@ class Publication(models.Model):
             return self.year
 
     def __str__(self):
-        return f'{self.author}. {self.year_and_letter}'
+        return f'{self.author} {self.year_and_letter}. {self.reference}'
 
 class Presentation(models.Model):
     year = models.IntegerField(null=True, blank=True, validators=[MinValueValidator(1900), \
@@ -43,8 +43,8 @@ class Presentation(models.Model):
                                 'any details regarding the meeting.')
     presenter = models.CharField(max_length=50, null=True, blank=True, help_text='Enter ' \
                                 'the name of the presenter if it was someone other than ' \
-                                'yourself.')
-    
+                                'yourself. Leave blank if you presented.')
+
     class Meta:
         ordering = ['year', 'title']
 
@@ -60,10 +60,10 @@ class Travel(models.Model):
                                 'names, put the scientific name between "&lt;i&gt;" and ' \
                                 '"&lt;/i&gt;" tags. This will render the name in italics on ' \
                                 'the website.')
-    
+
     class Meta:
         ordering = ['year', 'travel_details']
-    
+
     def __str__(self):
         return f'{self.year}: {self.travel_details}'
 
@@ -81,18 +81,17 @@ class Grant(models.Model):
                                 'the website.')
     class Meta:
         ordering = ['year', 'amount', 'grant_details']
-    
+
     def __str__(self):
         return f'{self.year}: {self.grant_details}. {self.amount}'
 
 class Society(models.Model):
     society = models.TextField(max_length=500, null=True, blank=True, help_text='Enter the ' \
                                 'name of the society, as well as any postions held.')
-    
+
     class Meta:
         ordering = ['society']
         verbose_name_plural = "Societies"
-    
+
     def __str__(self):
         return self.society
-
