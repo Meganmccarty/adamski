@@ -5,6 +5,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/moth-favicon.png' %}"/>
+        <title>David Adamski – {% block title %}{% endblock %}</title>
     </head>
     <body>
         <!-- Element containing the Header -->
@@ -12,7 +14,9 @@
             <header class="header">
                 <div class="subheader">
                     <div class="subheader-img" id="left-header-img">
-                        <img src="{% static 'images/moth-inverse.png' %}">
+                        {% block headerimg1 %}
+                        {% endblock %}
+                        <!--<img src="{% static 'images/moth-inverse.png' %}">-->
                     </div>
                     <div class="subheader-item">
                         <img id="card" src="{% static 'images/card-img.png' %}">
@@ -30,7 +34,9 @@
                         <h5>Email: <a href="mailto:<adamskid@si.edu">adamskid@si.edu</a></h5>
                     </div>
                     <div class="subheader-img" id="right-header-img">
-                        <img src="{% static 'images/moth.png' %}">
+                        {% block headerimg2 %}
+                        {% endblock %}
+                        <!--<img src="{% static 'images/moth.png' %}">-->
                     </div>
                 </div>
             </header>

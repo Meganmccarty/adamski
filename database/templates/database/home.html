@@ -1,12 +1,19 @@
 {% extends 'database/base.html' %}
 {% load static %}
 
+{% block title %}Home{% endblock %}
+
+{% block headerimg1 %}
+<img src="{% static 'images/adamski-usnm.jpg' %}">
+{% endblock %}
+
+{% block headerimg2 %}
+<img src="{% static 'images/blacklight.jpg' %}">
+{% endblock %}
+
 {% block content %}
-<head>
-    {% block title %}<title>David Adamski - Home</title>{% endblock %}
-</head>
-<div class="img-right">
-    <img class="img-right" src="{% static 'images/blacklight.jpg' %}">
+<div class="img-center">
+    <img src="{% static 'images/blacklight.jpg' %}">
 </div>
 <h4>About</h4>
 <p>
@@ -22,16 +29,20 @@
     And I continue to do research on the Lepidoptera, primarily on the Gelechioidea.
 </p>
 <p>
-	My ongoing projects include: plylogenetics of the world Blastobasidae,
-	including evolution of host-plant preferences and biogeography; Moths of
-	America north of Mexico (MONA) fascicle on Blastobasidae, and many
-	alpha-taxonomic and life-history studies on Nearctic, Neotropical, and
-	Indo-Asian Gelechioidea.
+    My ongoing projects include: plylogenetics of the world Blastobasidae,
+    including evolution of host-plant preferences and biogeography; Moths of
+    America north of Mexico (MONA) fascicle on Blastobasidae, and many
+    alpha-taxonomic and life-history studies on Nearctic, Neotropical, and
+    Indo-Asian Gelechioidea.
 </p>
 <p>
-	I am and remain eager to collaborate with anyone who desires identifications
-	of taxa within my expertise, including life-history studies or general collecting.
+    I am and remain eager to collaborate with anyone who desires identifications
+    of taxa within my expertise, including life-history studies or general collecting.
 </p>
+<div class="img-center">
+    <!--Put the other image here
+    <img src="{% static 'images/blacklight.jpg' %}">-->
+</div>
 <h4>Education</h4>
 <ul class="list">
     <li>1987: Ph.D., Mississippi State University (MSU): Entomology, Systematics.</li>

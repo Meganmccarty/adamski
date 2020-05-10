@@ -1,16 +1,23 @@
 {% extends 'database/base.html' %}
 {% load static %}
 
+{% block title %}Publications{% endblock %}
+
+{% block headerimg1 %}
+<img src="{% static 'images/msu.jpg' %}">
+{% endblock %}
+
+{% block headerimg2 %}
+<img src="{% static 'images/kenya.jpg' %}">
+{% endblock %}
+
 {% block content %}
-<head>
-    {% block title %}<title>David Adamski - Publications</title>{% endblock %}
-</head>
+<div class="img-center">
+    <img src="{% static 'images/adamski-usnm.jpg' %}">
+</div>
 <div class="search-box">
     <h4>Publications: {{ pub_count }}</h4>
     <input class="search" placeholder=" Search" />
-</div>
-<div class="img-right">
-    <img class="img-right" src="{% static 'images/adamski-usnm.jpg' %}">
 </div>
 <ol class="list list-items">
     {% for publication in pub_list %}

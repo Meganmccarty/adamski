@@ -1,17 +1,23 @@
 {% extends 'database/base.html' %}
 {% load static %}
 
+{% block title %}Fellowships and Grants{% endblock %}
+
+{% block headerimg1 %}
+<img src="{% static 'images/adamski-croatia.jpg' %}">
+{% endblock %}
+
+{% block headerimg2 %}
+<img src="{% static 'images/mantis.jpg' %}">
+{% endblock %}
+
 {% block content %}
-<head>
-    {% block title %}<title>David Adamski - Fellowships and Grants</title>{% endblock %}
-</head>
+<div class="img-center">
+    <img src="{% static 'images/mantis-lg.jpg' %}">
+</div>
 <div class="search-box">
     <h4>Fellowships and Grants</h4>
     <input class="search" placeholder=" Search" />
-</div>
-<div class="img-right">
-    <img class="img-right" src="{% static 'images/mantis.jpg' %}">
-    <p>Photo © Megan McCarty</p>
 </div>
 <ul class="list list-items">
     {% for grant in grant_list %}

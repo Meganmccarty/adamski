@@ -1,16 +1,23 @@
 {% extends 'database/base.html' %}
 {% load static %}
 
+{% block title %}Travel{% endblock %}
+
+{% block headerimg1 %}
+<img src="{% static 'images/atlas-moth.jpg' %}">
+{% endblock %}
+
+{% block headerimg2 %}
+<img src="{% static 'images/adamski-bklight.jpg' %}">
+{% endblock %}
+
 {% block content %}
-<head>
-    {% block title %}<title>David Adamski - Travel</title>{% endblock %}
-</head>
+<div class="img-center">
+    <img src="{% static 'images/atlas-moth.jpg' %}">
+</div>
 <div class="search-box">
     <h4>Travel</h4>
     <input class="search" placeholder=" Search" />
-</div>
-<div class="img-right">
-    <img class="img-right" src="{% static 'images/atlas-moth.jpg' %}">
 </div>
 <ul class="list list-items">
     {% for travel in travel_list %}

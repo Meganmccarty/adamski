@@ -1,16 +1,23 @@
 {% extends 'database/base.html' %}
 {% load static %}
 
+{% block title %}Presentations{% endblock %}
+
+{% block headerimg1 %}
+<img src="{% static 'images/chengdu2.jpg' %}">
+{% endblock %}
+
+{% block headerimg2 %}
+<img src="{% static 'images/adamski-chengdu.jpg' %}">
+{% endblock %}
+
 {% block content %}
-<head>
-    {% block title %}<title>David Adamski - Presentations</title>{% endblock %}
-</head>
+<div class="img-center">
+    <img src="{% static 'images/chengdu2.jpg' %}">
+</div>
 <div class="search-box">
     <h4>Presentations: {{ pres_count }}</h4>
     <input class="search" placeholder=" Search" />
-</div>
-<div class="img-right">
-    <img class="img-right" src="{% static 'images/net-sunset.JPG' %}">
 </div>
 <ul class="list list-items">
     {% for presentation in pres_list %}
