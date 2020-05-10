@@ -125,6 +125,13 @@ footer {
     padding: 5px;
 }
 
+td {
+    vertical-align: top;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 /*---------- Search Box on Pub., Pres., Travel, and Grants Pages ----------*/
 
 .search-box {
