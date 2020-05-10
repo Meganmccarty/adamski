@@ -2,10 +2,13 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Publication(models.Model):
+    pub_num = models.IntegerField(null=True, blank=True, validators=[MinValueValidator(1), \
+                                MaxValueValidator(500)], verbose_name='Publication Number', \
+                                help_text='Enter the publication\'s number.')
     author = models.TextField(max_length=10000, null=True, blank=True, verbose_name='Author(s)',
                                 help_text='Enter the author(s) who wrote this publication.')
     year = models.IntegerField(null=True, blank=True, validators=[MinValueValidator(1900), \
-                                MaxValueValidator(2100)], help_text='Enter the year of publication')
+                                MaxValueValidator(2100)], help_text='Enter the year of publication.')
     letter = models.CharField(max_length=2, null=True, blank=True, help_text='Enter a letter ' \
                                 'to follow the publication year, if there was more than 1 ' \
                                 'publication in a given year.')

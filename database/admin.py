@@ -3,9 +3,9 @@ from .models import Publication, Presentation, Travel, Grant, Society
 
 @admin.register(Publication)
 class PublicationAdmin(admin.ModelAdmin):
-    list_display = ('author', 'year_and_letter', 'reference')
-    search_fields = ('author', 'year_and_letter', 'reference')
-    fields = ('author', 'year', 'letter', 'reference', 'pdf')
+    list_display = ('pub_num', 'author', 'year_and_letter', 'reference')
+    search_fields = ('pub_num', 'author', 'year_and_letter', 'reference')
+    fields = ('pub_num', 'author', 'year', 'letter', 'reference', 'pdf')
 
 @admin.register(Presentation)
 class PresentationAdmin(admin.ModelAdmin):
