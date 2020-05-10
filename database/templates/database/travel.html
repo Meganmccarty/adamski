@@ -15,17 +15,19 @@
 <div class="img-center">
     <img src="{% static 'images/atlas-moth.jpg' %}">
 </div>
-<div class="search-box">
-    <h4>Travel</h4>
-    <input class="search" placeholder=" Search" />
+<div id="all-items"> <!-- Do NOT remove this div or its id, it's for List.js (no CSS) -->
+    <div class="search-box">
+        <h4>Travel</h4>
+        <input class="search" placeholder=" Search" />
+    </div>
+    <ul class="list list-items">
+        {% for travel in travel_list %}
+            <li>
+                <span class="item"> <!-- Do NOT remove this class, it's for List.js (no CSS) -->
+                    {{ travel.year }}: {{ travel.travel_details | safe }}
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
 </div>
-<ul class="list list-items">
-    {% for travel in travel_list %}
-        <li>
-            <span>
-                {{ travel.year }}: {{ travel.travel_details | safe }}
-            </span>
-        </li>
-    {% endfor %}
-</ul>
 {% endblock %}

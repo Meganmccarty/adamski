@@ -15,25 +15,27 @@
 <div class="img-center">
     <img src="{% static 'images/chengdu2.jpg' %}">
 </div>
-<div class="search-box">
-    <h4>Presentations: {{ pres_count }}</h4>
-    <input class="search" placeholder=" Search" />
+<div id="all-items"> <!-- Do NOT remove this div or its id, it's for List.js (no CSS) -->
+    <div class="search-box">
+        <h4>Presentations: {{ pres_count }}</h4>
+        <input class="search" placeholder=" Search" />
+    </div>
+    <ul class="list list-items">
+        {% for presentation in pres_list %}
+            <li>
+                {% if presentation.presenter %}
+                    <span class="item"> <!-- Do NOT remove this class, it's for List.js (no CSS) -->
+                        {{ presentation.year}}. {{ presentation.title | safe }}
+                        {{ presentation.location | safe }} {{ presentation.presenter }}, presenter.
+                    </span>
+                {% else %}
+                    <span class="item"> <!-- Do NOT remove this class, it's for List.js (no CSS) -->
+                        {{ presentation.year}}. {{ presentation.title | safe }}
+                        {{ presentation.location | safe }}
+                    </span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
 </div>
-<ul class="list list-items">
-    {% for presentation in pres_list %}
-        <li>
-            {% if presentation.presenter %}
-                <span>
-                    {{ presentation.year}}. {{ presentation.title | safe }}
-                    {{ presentation.location | safe }} {{ presentation.presenter }}, presenter.
-                </span>
-            {% else %}
-                <span>
-                    {{ presentation.year}}. {{ presentation.title | safe }}
-                    {{ presentation.location | safe }}
-                </span>
-            {% endif %}
-        </li>
-    {% endfor %}
-</ul>
 {% endblock %}
